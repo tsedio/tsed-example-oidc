@@ -1,0 +1,50 @@
+{
+  "name": "oidc-provider",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "yarn tsc",
+    "tsc": "tsc --project tsconfig.compile.json",
+    "tsc:w": "tsc --project tsconfig.json -w",
+    "start": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/index.ts",
+    "start:prod": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "dependencies": {
+    "@tsed/ajv": "^6.15.0",
+    "@tsed/common": "^6.15.0",
+    "@tsed/core": "^6.15.0",
+    "@tsed/di": "^6.15.0",
+    "@tsed/exceptions": "^6.15.0",
+    "@tsed/json-mapper": "^6.15.0",
+    "@tsed/platform-express": "^6.15.0",
+    "@tsed/schema": "^6.15.0",
+    "@tsed/swagger": "^6.15.0",
+    "ajv": "^6.12.6",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "jose": "^2.0.3",
+    "method-override": "^3.0.0",
+    "oidc-provider": "^6.29.8",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.9",
+    "@types/fs-extra": "^9.0.4",
+    "@types/method-override": "^0.0.31",
+    "@types/multer": "^1.4.4",
+    "@types/node": "^14.14.10",
+    "@types/uuid": "^8.3.0",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.0",
+    "typescript": "^4.1.2"
+  }
+}
