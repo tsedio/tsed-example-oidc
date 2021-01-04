@@ -1,0 +1,45 @@
+{
+  "name": "@project/app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "0.21.1",
+    "jwt-decode": "3.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4",
+    "oidc-client": "1.10.1"
+  },
+  "devDependencies": {
+    "@project/tailwind": "1.0.0",
+    "@craco/craco": "6.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

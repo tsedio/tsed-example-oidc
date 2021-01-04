@@ -1,5 +1,11 @@
 version: '3.3'
 services:
+  app:
+    image: nginx:1.14
+    ports:
+      - 3000:80
+    volumes:
+      - ./packages/app/build:/usr/share/nginx/html
   server:
     build:
       context: .
@@ -8,9 +14,11 @@ services:
         - http_proxy
         - https_proxy
         - no_proxy
-    image: oidc-provider/server:latest
+    image: server:latest
     ports:
-      - "8081:8081"
+      - "8083:8083"
     stdin_open: true  # -i
     tty: true         # -t
+    environment:
+      - NODE_ENV=development
 

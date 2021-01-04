@@ -1,0 +1,118 @@
+body {
+  font-family: Source Sans Pro, sans-serif;
+}
+
+/* Commons styles */
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+  /* Normalization for tailwindcss border utilities */
+  border-color: theme('borderColors.default', currentColor);
+  border-style: solid;
+  border-width: 0;
+}
+
+body {
+  min-width: calc(300rem / 16);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+  min-height: 100vh;
+
+  @apply text-gray-darker;
+  @apply text-base;
+  @apply font-sans;
+}
+
+h1 {
+  @apply text-3xl mb-3 mt-3 font-bold;
+}
+
+h2 {
+  @apply text-2xl mt-3 p-2 font-bold;
+}
+
+h3 {
+  @apply text-xl mb-2 mt-2;
+}
+
+h4 {
+  @apply text-lg mb-2 mt-2;
+}
+
+h5 {
+  @apply text-md mb-2 mt-2;
+}
+
+h6 {
+  @apply text-sm mb-2 mt-2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: -6.5rem;
+  padding-top: 7.0rem;
+  margin-bottom: 0.5rem !important;
+
+  &.heading {
+    @apply font-hairline;
+  }
+
+  b {
+    @apply font-bold;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  @apply px-3;
+}
+
+p {
+  @apply mb-3;
+  @apply mt-3;
+}
+
+a:not(.reset-link) {
+  @apply text-blue underline;
+  transition: all ease-in 500ms;
+
+  &:hover {
+    @apply text-blue-active;
+  }
+}
+
+ul:not(.reset-list),
+ol:not(.reset-list) {
+  @apply ml-10 my-5 leading-6;
+
+  ul {
+    @apply ml-5 my-1;
+  }
+}
+
+ul:not(.reset-list) {
+  @apply list-disc;
+
+  ul li {
+    list-style: circle;
+  }
+}
+
+ol:not(.reset-list) {
+  @apply list-decimal;
+
+  ol li {
+    list-style: lower-alpha;
+  }
+}
+
+hr {
+  @apply border-0 border-t-1 border-solid border-gray-light mt-5 mb-5;
+}

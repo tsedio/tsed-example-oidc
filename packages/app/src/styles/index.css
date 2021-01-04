@@ -1,0 +1,19 @@
+@import "./tailwind.css";
+@import "./fonts.css";
+@import "./typography.css";
+@import "./animations.css";
+
+body:after {
+  content: "";
+  background-image: radial-gradient(#eef2f5 0, #f4f7f8 40%, transparent 75%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+}
+
+.container {
+  @apply relative max-w-site-large z-2 m-auto pt-20;
+}
