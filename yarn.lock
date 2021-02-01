@@ -2781,9 +2781,9 @@
     tslib "2.0.1"
 
 "@tsed/swagger@^6.20.1":
-  version "6.20.1"
-  resolved "https://registry.yarnpkg.com/@tsed/swagger/-/swagger-6.20.1.tgz#7c68552f6e279cba63e5156000104ed31568281f"
-  integrity sha512-bGubtK6ccS22hkq7PG/1CeCiVR7nREAH6guXme17D7IJX+enyTmx4YqB2pdwaVnId17ZOOS5KlN7Ytm8+EbbJw==
+  version "6.23.4"
+  resolved "https://registry.yarnpkg.com/@tsed/swagger/-/swagger-6.23.4.tgz#2b0c206299163fc410df9aa1a5579c156cf1dc1f"
+  integrity sha512-gD22TeoIMv5/XiTyXvo0ptwVd+Vov5fP01yzv3cKtuDODZuNDLcIZwDT7y5rD/aS5ODYCk7Rf6VGHY+BY2sC+w==
   dependencies:
     swagger-ui-dist "^3.31.1"
     tslib "2.0.1"
