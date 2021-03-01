@@ -9581,12 +9581,17 @@ jest@26.6.0:
     import-local "^3.0.2"
     jest-cli "^26.6.0"
 
-jose@^2.0.2, jose@^2.0.3:
+jose@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/jose/-/jose-2.0.3.tgz#9c931ab3e13e2d16a5b9e6183e60b2fc40a8e1b8"
   integrity sha512-L+RlDgjO0Tk+Ki6/5IXCSEnmJCV8iMFZoBuEgu2vPQJJ4zfG/k3CAqZUMKDYNRHIDyy0QidJpOvX0NgpsAqFlw==
   dependencies:
     "@panva/asn1.js" "^1.0.0"
+
+jose@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-3.6.2.tgz#e35ebe187306c14a0633b33b277a1550a3a947ee"
+  integrity sha512-JzqHr6UqydWv25HwLzRdBJgMetiPkDBE/WJSyJjhNwN3+GmcHu4yoUgRle0NNViCdfAYMf9DuOG8o+mUW/DXdg==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
