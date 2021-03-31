@@ -2,7 +2,8 @@ import "@tsed/adapters";
 import {FileSyncAdapter} from "@tsed/adapters";
 import "@tsed/ajv";
 import {PlatformApplication} from "@tsed/common";
-import {Configuration, Inject} from "@tsed/di";
+import {Configuration, Constant, Inject} from "@tsed/di";
+import {OidcProvider} from "@tsed/oidc-provider";
 import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/swagger";
 import bodyParser from "body-parser";
@@ -52,6 +53,7 @@ export const rootDir = __dirname;
   oidc: {
     Accounts: Accounts,
     jwksPath: join(__dirname, "..", "keys", "jwks.json"),
+    extraParams: ["ga", "utm_source", "utm_medium", "utm_campaign"],
     clients: [
       {
         client_name: "Oidc Admin",
@@ -103,7 +105,15 @@ export class Server {
   @Configuration()
   settings: Configuration;
 
+  @Inject()
+  oidcProvider: OidcProvider;
+
+  @Constant("oidc.extraParams", [])
+  extraParams: string[];
+
   $beforeRoutesInit(): void {
+    this.overrideResponseMode()
+
     this.app
       .use(cors())
       .use(cookieParser())
@@ -113,5 +123,24 @@ export class Server {
       .use(bodyParser.urlencoded({
         extended: true
       }));
+  }
+
+  overrideResponseMode(){
+    const instance = require("oidc-provider/lib/helpers/weak_cache");
+    const {responseModes} = instance(this.oidcProvider.get());
+
+    responseModes.forEach((handler: Function, key: string) => {
+      if (key === "query" || key === "fragment") {
+        responseModes.set(key, (ctx: any, redirectUri: string, payload: any) => {
+          this.extraParams.forEach((key) => {
+            if ( ctx.oidc.params[key]){
+              payload[key] = ctx.oidc.params[key]
+            }
+          })
+
+          return handler(ctx, redirectUri, payload)
+        })
+      }
+    });
   }
 }
