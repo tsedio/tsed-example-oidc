@@ -15,7 +15,7 @@
     "build:app": "lerna run build --scope=@project/ap --stream",
     "build:server": "lerna run build --scope=@project/server --stream",
     "start": "lerna run start --stream --parallel",
-    "start:client": "lerna run start --scope=@project/client --stream",
+    "start:app": "lerna run start --scope=@project/app --stream",
     "start:server": "lerna run start --scope=@project/server --stream",
     "start:prod": "pm2-docker --raw processes.config.js --no-deamon",
     "docker:build": "yarn build && docker-compose build"

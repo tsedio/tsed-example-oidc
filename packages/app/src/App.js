@@ -10,7 +10,7 @@ const IfClientsComponents = withIf(ClientsComponent)
 const IfUserInfo = withIf(UserInfo)
 
 function App () {
-  const { isActive, clients, onSubmit, auth, onLogout } = useOidc()
+  const { isActive, clients, onSubmit, auth, onLogout, extraParams } = useOidc()
 
   return (
     <div className="App">
@@ -18,7 +18,7 @@ function App () {
         <LogoComponent className={'mb-5'}/>
         <LoaderComponent isActive={isActive}/>
         <IfClientsComponents if={!isActive && !auth} clients={clients} onSubmit={onSubmit}/>
-        <IfUserInfo if={!isActive && auth} {...auth} logout={onLogout} />
+        <IfUserInfo if={!isActive && auth} {...auth} extraParams={extraParams} logout={onLogout} />
       </main>
     </div>
   )

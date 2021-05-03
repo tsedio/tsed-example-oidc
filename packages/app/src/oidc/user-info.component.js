@@ -3,11 +3,11 @@ import React from 'react'
 import { ButtonComponent } from '../forms/button/button.component'
 
 function DebugToken ({ token }) {
-  return <div className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-small flex'}>
+  return <div className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-sm flex'}>
     <div className={'w-1/2 flex flex-col pr-2'}>
       <h5 className={'px-0'}>Encoded</h5>
       <div className={'flex-1 flex'}>
-        <textarea className={'h-full w-full p-2 text-sm'}>{token}</textarea>
+        <textarea className={'h-full w-full p-2 text-sm'} defaultValue={token || ''}/>
       </div>
     </div>
     <div className={'w-1/2 flex flex-col pl-2'}>
@@ -20,8 +20,8 @@ function DebugToken ({ token }) {
   </div>
 }
 
-export function UserInfo ({ id_token, access_token, profile, logout }) {
-  return <div className={"pb-5"}>
+export function UserInfo ({ id_token, access_token, extraParams, profile, logout }) {
+  return <div className={'pb-5'}>
     <div>
       <div className={'flex'}>
         <h3 className={'mx-0 flex-1'}>User info</h3>
@@ -32,7 +32,7 @@ export function UserInfo ({ id_token, access_token, profile, logout }) {
         </div>
       </div>
 
-      <div className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-small'}>
+      <div className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-sm'}>
         <table>
           <tbody>
           {
@@ -62,6 +62,29 @@ export function UserInfo ({ id_token, access_token, profile, logout }) {
         <h3>Access token</h3>
 
         <DebugToken token={access_token}/>
+      </div>
+    }
+
+    {
+      extraParams && <div>
+        <div className={'flex'}>
+          <h3 className={'mx-0 flex-1'}>Extra params</h3>
+        </div>
+
+        <div className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-sm'}>
+          <table>
+            <tbody>
+            {
+              Object.entries(extraParams).map(([key, value]) => {
+                return <tr key={key}>
+                  <th className={'text-left p-1'}>{key}</th>
+                  <td className={'p-1'}>{value}</td>
+                </tr>
+              })
+            }
+            </tbody>
+          </table>
+        </div>
       </div>
     }
   </div>

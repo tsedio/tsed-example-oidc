@@ -57,8 +57,6 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: -6.5rem;
-  padding-top: 7.0rem;
   margin-bottom: 0.5rem !important;
 
   &.heading {
@@ -80,11 +78,11 @@ p {
 }
 
 a:not(.reset-link) {
-  @apply text-blue underline;
+  @apply text-primary underline;
   transition: all ease-in 500ms;
 
   &:hover {
-    @apply text-blue-active;
+    @apply text-secondary;
   }
 }
 

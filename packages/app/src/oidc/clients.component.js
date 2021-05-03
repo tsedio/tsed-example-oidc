@@ -8,7 +8,7 @@ export function ClientsComponent ({ clients, onSubmit }) {
       {
         clients.map((client) => {
           return (
-            <li className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-small'} key={client.client_id}>
+            <li className={'bg-gray-lighter pb-4 p-5 mb-10 rounded-sm'} key={client.client_id}>
               <ClientComponent {...client} onSubmit={onSubmit}/>
             </li>
           )

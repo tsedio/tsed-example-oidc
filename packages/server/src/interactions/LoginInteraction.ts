@@ -48,6 +48,7 @@ export class LoginInteraction {
                @OidcSession() session: OidcSession,
                @Prompt() prompt: Prompt,
                @OidcCtx() oidcCtx: OidcCtx) {
+
     if (prompt.name !== "login") {
       throw new BadRequest("Bad interaction name");
     }
@@ -72,7 +73,7 @@ export class LoginInteraction {
 
     return oidcCtx.interactionFinished({
       login: {
-        account: account.accountId
+        accountId: account.accountId
       }
     });
   }

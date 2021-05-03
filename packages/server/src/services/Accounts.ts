@@ -22,14 +22,8 @@ export class Accounts implements OidcAccountsMethods {
     }
   }
 
-  async findAccount(id: string, token: AuthorizationCode | AccessToken | DeviceCode | undefined, ctx: PlatformContext): Promise<Account | undefined> {
-    const account = await this.adapter.findById(id);
-
-    if (!account) {
-      return undefined;
-    }
-
-    return account;
+  async findAccount(id: string, token: AuthorizationCode | AccessToken | DeviceCode | undefined, ctx: PlatformContext) {
+      return this.adapter.findById(id);
   }
 
   async authenticate(payload: any): Promise<Account | undefined> {

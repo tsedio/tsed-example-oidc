@@ -36,6 +36,28 @@ export const AppConfig = {
             'nonce': 'foobar'
           }
         }
+      ],
+      'query': [
+        {
+          label: 'Google tag (ga)',
+          name: 'ga',
+          value: '12437'
+        },
+        {
+          label: 'Google UTM source (utm_source)',
+          name: 'utm_source',
+          value: 'utm_source_value'
+        },
+        {
+          label: 'Google UTM medium (utm_medium)',
+          name: 'utm_medium',
+          value: 'utm_medium_value'
+        },
+        {
+          label: 'Google UTM Campaign (utm_campaign)',
+          name: 'utm_campaign',
+          value: 'utm_campaign_value'
+        }
       ]
     }
   ]

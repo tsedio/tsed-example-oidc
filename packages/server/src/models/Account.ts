@@ -27,6 +27,8 @@ export class Account {
   @Property()
   name: string;
 
+  [key: string]: unknown;
+
   get accountId() {
     return this._id;
   }
