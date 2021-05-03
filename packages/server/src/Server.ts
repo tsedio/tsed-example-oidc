@@ -51,7 +51,7 @@ export const rootDir = __dirname;
     lowdbDir: `${rootDir}/../.db`
   },
   oidc: {
-    Accounts: Accounts,
+    Accounts,
     jwksPath: join(__dirname, "..", "keys", "jwks.json"),
     extraParams: ["ga", "utm_source", "utm_medium", "utm_campaign"],
     clients: [
@@ -73,21 +73,9 @@ export const rootDir = __dirname;
         ]
       }
     ],
-    // responseTypes: [
-    //   "code",
-    //   "id_token",
-    //   "id_token token",
-    //   "code id_token",
-    //   "code token",
-    //   "code id_token token",
-    //   "none"
-    // ],
     claims: {
       openid: ["sub"],
       email: ["email", "email_verified"]
-    },
-    formats: {
-      AccessToken: "jwt"
     },
     features: {
       // disable the packaged interactions
@@ -130,7 +118,7 @@ export class Server {
     const {responseModes} = instance(this.oidcProvider.get());
 
     responseModes.forEach((handler: Function, key: string) => {
-      if (key === "query" || key === "fragment") {
+      // if (key === "query" || key === "fragment") {
         responseModes.set(key, (ctx: any, redirectUri: string, payload: any) => {
           this.extraParams.forEach((key) => {
             if ( ctx.oidc.params[key]){
@@ -140,7 +128,7 @@ export class Server {
 
           return handler(ctx, redirectUri, payload)
         })
-      }
+     // }
     });
   }
 }
