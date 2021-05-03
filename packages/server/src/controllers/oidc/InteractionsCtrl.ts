@@ -4,7 +4,7 @@ import {ConsentInteraction} from "../../interactions/ConsentInteraction";
 import {LoginInteraction} from "../../interactions/LoginInteraction";
 
 @Interactions({
-  path: "/interaction/:uid",
+  path: "/oidc/:uid",
   children: [
     LoginInteraction,
     ConsentInteraction
