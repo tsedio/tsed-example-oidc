@@ -9583,17 +9583,15 @@ jest@26.6.0:
   dependencies:
     "@panva/asn1.js" "^1.0.0"
 
-jose@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-2.0.3.tgz#9c931ab3e13e2d16a5b9e6183e60b2fc40a8e1b8"
-  integrity sha512-L+RlDgjO0Tk+Ki6/5IXCSEnmJCV8iMFZoBuEgu2vPQJJ4zfG/k3CAqZUMKDYNRHIDyy0QidJpOvX0NgpsAqFlw==
-  dependencies:
-    "@panva/asn1.js" "^1.0.0"
-
 jose@^3.11.1:
   version "3.11.6"
   resolved "https://registry.yarnpkg.com/jose/-/jose-3.11.6.tgz#34028990dd0da69c444d40961107080047bb51ce"
   integrity sha512-h/qTZ80NygTGeNA6ok9KIz5N6GFrNzlnchSmFrtPzeTMvYN7mDJ2Z2QMKKp/9rrqPW1BVeBiu0KQkdYDUx2DSw==
+
+jose@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-4.5.1.tgz#1531d491fafe567338fd517f118293cce27aa0aa"
+  integrity sha512-uhjuzZjKGKmi5DVJ/eghN8hJklLhwZRLRAaaG9MkkMAdfRYlHvZ10i4z/4WSN1hSTMffCet+k7iRHvbdGwmZPw==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
